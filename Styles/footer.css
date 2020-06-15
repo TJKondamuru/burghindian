@@ -1,0 +1,91 @@
+/*footer css start*/
+.footer_bottom .copyright_text {
+    font-size: 14px;
+}
+.footer_section {
+    background-color: #1a1a1a;
+}
+.footer_top p ,.footer_top a{
+    color:#ccc;
+}
+.footer_top h6{
+    color:#fff;
+    margin-bottom: 12px;
+}
+.footer_top li:hover a{
+    color: #dd6c33;
+}
+.footer_top li:hover a svg path{
+    fill:#dd6c33;
+}
+.social_icon li{    
+    padding-right: 26px;
+}
+.submit_button{
+    background:#dd6c33 url(/images/email_icon.png) no-repeat center center;    
+    cursor: pointer;    
+    right: 15px;
+    outline: none;
+    padding: 16px 20px 10px 30px;    
+}
+form.newsletter_form input#email {
+    padding: 16px 20px 16px 18px;    
+    font-size: 14px;
+    line-height: normal;    
+    outline: none;
+    width: calc(100% - 50px);    
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #cccccc;
+}
+::-moz-placeholder { /* Firefox 19+ */
+    color: #cccccc;
+    opacity:1;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    color: #cccccc;
+}
+:-moz-placeholder { /* Firefox 18- */
+    color: #cccccc;
+}
+.footer_bottom{
+    color: #808080;
+    border-top:1px solid #333333;
+    padding: 26px 0;
+}
+.footer_top {
+    padding: 87px 0 45px;
+}
+.footer_top p {
+    padding: 19px 0 27px;
+}
+.footer_top li{
+    font-size:14px;
+    line-height: 30px;
+}
+form.newsletter_form {
+    margin-top: 4px;
+}
+/*footer css end*/
+
+/* Responsive css start*/
+
+@media (max-width: 1199px){
+    .footer_top { padding: 50px 0 30px;}
+}
+@media (max-width: 991px){
+    .footer_top { padding: 30px 0 27px;}
+    .footer_bottom {padding: 17px 0;}
+    ul.social_icon { margin-bottom: 35px;}
+    .footer_top p { padding: 15px 0 19px;}
+    form.newsletter_form input#email{padding: 16px 60px 16px 18px; width: 100%;}   
+}
+@media (max-width: 767px){
+.submit_button { padding: 19px 20px 10px 30px;}
+}
+@media(max-width: 575px){
+  .footer_top p { padding: 12px 0 15px;}
+  .footer_top h6{margin-bottom:9px;}
+  .footer_top { padding: 24px 0 20px;}
+   ul.social_icon { margin-bottom: 20px;}
+}

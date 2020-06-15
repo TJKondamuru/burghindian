@@ -1,0 +1,226 @@
+
+@media(max-width:1829px){
+    .second img { max-width: 60%;} 
+    .third img {  max-width: 57%; }
+    .fourth img {max-width: 54%;}
+    .first img {max-width: 40%;}
+}
+@media(max-width:1599px){
+    .second img { max-width: 58%;}  
+      .first img {  max-width: 30%;    } 
+      .simple_text {padding: 50px 10% 50px 17%;}
+}
+@media(max-width: 1366px){
+    h2, .h2{font-size: 46px;}
+    .blog_text h5 {font-size: 17px;}
+    .blog_text {padding: 0 6px 0 10px;}
+    .blog_text p {margin: 5px 0 5px;}
+    .left_content, .right_content {padding: 20px;}
+    .article_content h4 {font-size: 20px;}
+    .movie_text {padding: 12px;} 
+    .offer_box { padding: 1.3% 15px 6.5%;}
+     .offer_box img.img-center { right: 20px; }
+     .simple_text h3 {line-height: 40px;padding-bottom: 10px;}
+     .simple_text {padding: 50px 5% 50px 12%;}
+}
+
+@media(max-width:1199px){ 
+    h2, .h2{font-size: 40px;line-height: normal;}
+    h3, .h3{font-size: 36px;line-height: normal;}
+    
+    /**home page css start**/
+    .blog_section , .home_event_section{padding: 50px 0;}   
+    .article_content {display: block;}
+    .left_content, .right_content,.middle_content {width: 100%; margin: 0 0 20px;}
+    .article_content h4 {padding-bottom: 20px;}
+    .middle_content .article_text p {max-width: calc(100% - 58px);}
+    .article_text_block {margin: 0 -15px;}
+    .left_content .article_text, .right_content .article_text { padding: 15px; float: left; width: 33.33%; }
+    .whatsapp_group_section {padding: 50px 0;}
+    .whatsapp_group_section .w_g_main_content {margin: 30px 0;}
+    .movie_content { margin: 26px 0 35px;}
+    .right_content .button { display: table;  float: left; }
+    .second img {max-width: 55%;}
+    .offer_box { padding: 2.3% 15px 8.5%;background-position: top center;}
+    .movie_text h4 { padding-bottom: 10px; margin-bottom: 15px;font-size: 22px; } 
+    .simple_text {padding: 30px 3% 30px 6%;}
+    .simple_text h3 {line-height: 37px;font-size: 30px;}
+    .button{padding: 10.5px 25px;}
+    .simple_text .white_btn{margin-top:25px;padding: 10.5px 19px;}
+    .simple_text .white_btn:last-child {margin-left: 10px;}
+    .simple_text_section {padding-bottom: 50px;}
+	.padding {padding: 50px 0;}
+    /**home page css end**/
+    
+    .modal-body .slick-slider:first-child img {height: 450px;}
+    .modal-dialog {max-width: 950px;}
+
+    .gallery_section .card-img-top { height: 252px;}
+    .image_full_height { height: 264px; }
+}
+@media(max-width:991px){
+    h2, .h2{font-size: 36px;}
+    h3, .h3{font-size: 34px;}
+    .home_banner .h5{font-size: 20px;}
+    h5, .h5{font-size: 18px;}
+    .button,.reply_btn .orange_btn{padding: 8.5px 20px;}
+
+     /**home page css start**/
+     .blog_section , .home_event_section{padding: 40px 0 25px;}
+     .blog_content {margin-top: 20px;}
+     .blog_text {padding: 15px 6px 15px 10px;}
+     .blog_text h5 {font-size: 16px;word-break: break-all;}
+     .middle_content {padding: 15px 15px;}
+     .whatsapp_group_section {padding: 30px 0;}
+     .whatsapp_group_section .w_g_top_content .w_g_content {padding: 0 0 0 15px;}
+     .movie_content {margin: 21px 0 0;}
+     .movie_text {padding: 15px;width: 100%;}    
+     .offer_text h3 {font-size: 26px;}
+     .simple_text_section {padding-bottom: 40px;}
+     .simple_text_section .col-md-6{-ms-flex: 0 0 100%;flex: 0 0 100%;max-width: 100%;}
+      .simple_text_section .simple_img {width:100%;}
+      .simple_text .white_btn{padding: 4.5px 20px;}
+	  .home_banner p{padding: 10px 0 15px;}
+	  .padding {padding: 40px 0 25px;}
+     /**home page css end**/
+   
+     .modal .close_btn {width: 40px;height: 40px;right: -20px;top: -20px;}
+     .modal-body .slick-arrow{width: 40px;height: 40px;}
+
+     .aboutplaces_section .card-columns{ -webkit-column-count: 2; -moz-column-count: 2;column-count: 2;}
+     .card-title {font-size: 20px; }
+      .header_banner { padding: 30px 0;}
+      .image_full_height {height: 197px;}
+
+      .recent_bottom_detail {padding: 0 3px 35px;margin-bottom: 30px; max-width: 100%;}
+      .recent_bottom_detail h5 { padding: 20px 0px; margin: 0px 16px 23px;   }
+      .comment-text {padding: 0 16px 27px;}
+      .pagination .page-link { min-width: 41px; height: 40px; }
+}
+@media(max-width:767px){
+    h2, .h2{font-size: 32px;}
+    h3, .h3{font-size: 28px;}
+    .home_banner .h5{font-size: 18px;}
+    h5, .h5 { font-size: 16px;}
+    p{font-size: 14px;line-height: 21.68px;}
+    body{font-size: 14px;}
+   
+     /**home page css start**/
+     .blog_section {padding: 30px 0 15px;}
+     .home_event_section{padding: 30px 0;}
+     .blog_content {margin-top: 15px;}
+     .blog_box {margin-bottom: 15px;}
+     .blog_text {padding-left: 15px;}
+     .whatsapp_group_section .w_g_main_content { padding: 0 15px; margin: 15px 0 20px;}
+     .whatsapp_group_section .w_g_top_content {padding: 15px 0; }
+     .whatsapp_group_section .w_g_bottom_content {padding: 15px 0 30px;}     
+     .offer_text h3 {font-size: 22px;margin-bottom: 10px;}
+     .second img { max-width: 52%; }
+     .movie_text h4 { font-size: 20px; }
+     .movie_content .col-lg-12 { margin-bottom: 20px; }
+     .movie_content p{margin-bottom: 20px;}
+     .simple_text_section {padding-bottom: 30px;}
+     .simple_text h3 {line-height: normal;font-size: 22px;padding-bottom: 13px;}
+     .simple_text {padding: 30px;}
+     .simple_text .white_btn {margin-top: 16px;}
+     .button,.reply_btn .orange_btn{padding: 6.5px 15px;}
+     .banner_img img {display: none; }
+	 .home_banner_slider .banner_content{
+         background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        background-image: url('/images/banner_image.jpg');
+        max-width:100%;position: relative; left: 0; text-align: center; transform: translateY(0%); padding: 30px 15px;}
+	 .home_banner .banner_img:before{position: relative;}
+     .padding {padding: 30px 0 15px;}
+     .home_banner_slider .banner_content h2,.home_banner_slider .banner_content p{position: relative;}
+     .home_banner_slider .banner_content a {margin-bottom: 10px; position: relative;}
+     .home_banner_slider .banner_content::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: -webkit-gradient(linear,left top,right top,color-stop(15%,#071d39),color-stop(99%,rgba(7,29,57,0)));
+    }
+
+     /**home page css end**/
+    
+     .modal .close_btn { width: 30px;height: 30px; right: -15px;top: -15px;}
+      .modal-body { padding: 15px; }
+      .modal-dialog {padding: 20px;}
+
+      .modal-body .slick-slider:last-child img {height: 80px;}
+      .card-body{padding: 15px;}
+      .card-title {font-size: 18px;    margin-bottom: 6px; }
+      .card-text {margin-bottom: 10px;}
+      .aboutplaces_section .card-columns .stretched-link {padding: 7px 10px;}
+      .padding .h3 {margin-bottom: 15px;}
+
+      .recent_top { padding: 0px 0 15px;margin-bottom: 20px;}
+    .recent_top ul { padding-left: 0;}
+    .recent_top ul li {padding: 2px 16px 2px 15px;}
+    .button, .reply_btn .orange_btn {padding: 6.5px 15px;}
+
+    .gallery_section .image_full_height { height: 286px;}
+    .image_full_height img { position: relative !IMPORTANT; top: inherit; transform: none;}
+    .image_full_height { height: auto;    }
+
+    .recent_bottom_detail h5 { padding: 15px 0px; margin: 0px 16px 17px;    }
+    .comment-text { padding: 0 16px 20px; }
+
+    .price_text {width: calc(100% + 30px);margin-left: -15px;}
+}
+@media(max-width: 575px){
+    h2, .h2{font-size: 28px;}
+    h3, .h3{font-size: 26px;}
+    .button.white_btn {margin-top: 10px;} 
+    .article_text_block {margin: 0;}   
+    .left_content .article_text, .right_content .article_text {padding: 15px 0;width: 100%;} 
+    .movie_section .movie_text { width: 100%; }
+    .movie_content .col-lg-12 {display: block !important;}
+    .movie_text h4 {font-size: 18px;}
+    .address_text , .clock_title .time {  margin-bottom: 15px;  }
+    .movie_content img { display: block;   margin:0 auto 15px; border-radius: 5px; }
+    .offer_box {padding: 2.3% 15px 29.7%;}
+    .simple_text {padding: 15px 30px;}
+
+    .modal-body .slick-slider:first-child img {height: 350px;}
+    .modal-body .slick-slider:last-child img { height: 60px; }
+    .modal-body .slick-slider:last-child  .slick-slide { padding: 0 5px;}
+    .modal-body .slick-slider:last-child   .slick-list { margin: 0 -5px; }
+    .aboutplaces_section .card-columns { column-count: 1;  }
+
+    .recent_top {display: flex; justify-content: space-between;align-items: center; }
+    .recent_top ul li { padding: 9px 9px 2px 0px; display: block;border-right: 0;}
+
+    .header_banner .col-6:nth-child(2) {order: 0;}
+    .header_banner .col-12 {margin-bottom: 25px;}
+     .header_banner { padding: 25px 0;}
+     .movie_content_block { padding-top: 15px;}
+
+     .gallery_section .image_full_height{ height: auto; }
+
+     .recent_bottom_detail {  padding: 0 3px 25px;    margin-bottom: 26px;   }
+     .whatsapp_group_section h3{font-size: 18px;}
+    }
+@media(max-width:479px){
+    h2, .h2{font-size: 24px;}
+    h3, .h3{font-size: 22px;}
+    .offer_text h3 { font-size: 18px;}
+    .movie_content {margin: 18px 0 20px;}
+    .movie_content p {margin-bottom: 15px;}
+	.simple_text .white_btn:last-child {margin-left: 0;}
+	.simple_text .white_btn{display: table;}
+}
+@media (max-width: 375px){
+.modal-body .slick-slider:first-child img {height: 280px;}
+ .modal-body .slick-slider:last-child img { height: 50px; }
+}
+/**/
+@media screen and (orientation:landscape) and (min-device-width: 319px) and (max-device-width: 991px) {
+   /* Your CSS Here*/
+   .body--popup--open .gallery_modal{display: block;}
+}

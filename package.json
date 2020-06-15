@@ -8,8 +8,16 @@
     "start": "next start"
   },
   "dependencies": {
+    "axios": "^0.19.2",
+    "draft-js": "^0.11.5",
+    "draft-js-export-html": "^1.4.1",
+    "luxon": "^1.23.0",
     "next": "9.4.4",
+    "next-page-transitions": "^1.0.0-beta.2",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "react-draft-wysiwyg": "^1.14.4",
+    "react-slick": "^0.25.2",
+    "slick-carousel": "^1.8.1"
   }
 }
