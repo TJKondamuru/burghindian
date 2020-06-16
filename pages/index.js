@@ -290,7 +290,7 @@ function Movies(props){
   )
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const homepage = await serverAPI.home();
   return {props:{homepage}}
 }

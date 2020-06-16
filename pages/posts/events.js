@@ -83,7 +83,7 @@ function EventsPage({events, filterObj}){
 }
 
  
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
     
     const allevents = await serverAPI.events();
     let sortedSet = EventSort(allevents);
