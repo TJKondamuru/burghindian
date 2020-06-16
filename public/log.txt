@@ -1,3 +1,4 @@
-app-updates-06-16
+app-updates-06-15
     Added multiple accomidation requests and events.
-
+app-updates-06-16
+    Removed events and changed date.
