@@ -1,3 +1,7 @@
 app-updates-06-16
+<<<<<<< Updated upstream
     Added multiple accomidation requests and events.
 
+=======
+    Removed events and changed date.
+>>>>>>> Stashed changes
