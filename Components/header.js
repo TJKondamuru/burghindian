@@ -1,18 +1,42 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 function Header({loading, setLoading}) {
-    let MODAL_OPEN_CLASS = "body--menu--open";
-    /*if (this.state.addClass) {
-        document.body.classList.add(MODAL_OPEN_CLASS);
-    } else {
-        document.body.classList.remove(MODAL_OPEN_CLASS);
-    }*/
-    const router = useRouter()
+    const router = useRouter();
+    const [addClass, setaddClass] = useState(false);
+    const [menuname, setMenuname] = useState(router.route.toLowerCase().substr(router.route.toLowerCase().lastIndexOf('/')))
     
-    const changeMenu = menuname=> {
-        return router.pathname.toLowerCase().indexOf(menuname) > -1 ? 'active' : '';
+
+    useEffect(()=>{
+        if (addClass) {
+            document.body.classList.add('body--menu--open');
+        } else {
+            document.body.classList.remove('body--menu--open');
+        }
+    }, [addClass])
+    
+    const linkClick = (newmenu, e, ismobile)=>{
+        let newmenuname = Object.keys(newmenu)[0];
+        let displayname= newmenu[newmenuname];
+        let routename = router.route.toLowerCase();
+
+        if(routename === '/')
+            routename = 'home';
+
+        if(routename.indexOf(newmenuname) > -1)
+            e.preventDefault();
+        else
+            setLoading(displayname);
+
+        setMenuname(newmenuname);
+        if(ismobile)
+            setaddClass(false);
+    };
+    
+    
+    const changeMenu = menutoken=> {
+        return menuname.indexOf(menutoken) > -1 ? 'active' : '';
     };
     return (
         <header className="header_section position-relative ">
@@ -21,7 +45,7 @@ function Header({loading, setLoading}) {
                     <div className="row">
                         <div className="col-md-6">
                             <div className="mobile_view mobile_toggle d-none">
-                                <button type="button" data-toggle="toggle" className="navbar_toggler">
+                                <button type="button" data-toggle="toggle" className="navbar_toggler" onClick={e=>setaddClass(!addClass)}>
                                     <svg className="menu_toggle" xmlns="http://www.w3.org/2000/svg" width="40" height="28" viewBox="0 0 46 28"><g><g><path id="menu" className="cls-1" fill="#000" d="M0 12.984h46v2.02H0zm0 12.981h46v2.06H0zM0 .006h46v1.96H0z"></path></g></g></svg>
                                     <svg className="menu_close" data-name="Layer 1" id="Layer_1" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
                                         <line className="cls-1" x1="1" x2="47" y1="47" y2="1" /><line className="cls-1" x1="1" x2="47" y1="1" y2="47" />
@@ -30,13 +54,14 @@ function Header({loading, setLoading}) {
 
                                 <div className="navigation shadow">
                                     <ul className="navbar-nav">
-                                        <li className="nav-item home"><Link href="/"><a>Home</a></Link></li>
-                                        <li className="nav-item"><Link href="/posts/events"><a>Events</a></Link></li>
-                                        <li className="nav-item"><Link href="/Coupons"><a>Coupons</a></Link></li>
-                                        <li className="nav-item"><Link href="/AdvertisewithUs"><a>Advertise</a></Link></li>
-                                        <li className="nav-item"><Link href="/User-Posts"><a>Accommodations</a></Link></li>
-                                        <li className="nav-item"><Link href="/posts/about-places"><a>About Places</a></Link></li>
-                                        <li className="nav-item"><Link href="/posts/gallery"><a>Gallery</a></Link></li>
+                                        <li className="nav-item home"><Link href="/"><a onClick={e=>linkClick({'home':'Home'}, e, true)}>Home</a></Link></li>
+                                        <li className="nav-item"><Link href="/posts/events"><a onClick={e=>linkClick({'events':'Events'}, e, true)}>Events</a></Link></li>
+                                        <li className="nav-item"><Link href="/posts/user-posts"><a onClick={e=>linkClick({'user-posts':'User Posts'}, e, true)}>User Posts</a></Link></li>
+                                        <li className="nav-item"><Link href="/posts/coupons"><a onClick={e=>linkClick({'coupons':'Coupons'}, e, true)}>Coupons</a></Link></li>
+                                        <li className="nav-item"><Link href="/posts/about-places"><a onClick={e=>linkClick({'about-places':'Places to visit'}, e, true)}>About Places</a></Link></li>
+                                        <li className="nav-item"><Link href="/posts/gallery"><a onClick={e=>linkClick({'gallery':'Gallery'}, e, true)}>Gallery</a></Link></li>
+                                        <li className="nav-item"><Link href="/posts/advertise-with-us"><a>Advertise</a></Link></li>
+                                        <li className="nav-item"><Link href="/posts/add-post"><a><span>Post Ad</span></a></Link></li>
                                     </ul>
                                 </div>
 
@@ -82,38 +107,38 @@ function Header({loading, setLoading}) {
                                 <ul className="navbar-nav">
                                     <li className="nav-item home">
                                         <Link href="/">
-                                            <a className={router.pathname==='/'  ? 'active' : ''} onClick={e=>setLoading('Home')}>Home</a>
+                                            <a className={router.pathname==='/'  ? 'active' : ''} onClick={e=>linkClick({'home':'Home'}, e)}>Home</a>
                                         </Link>
                                     </li>
                                     <li className="nav-item">
                                         <img src="/images/Calendar-icon.png" alt="events" className="mr-1" />
                                         <Link href="/posts/events">
-                                            <a className={changeMenu('events')} onClick={e=>setLoading('Events')}><span>Events</span></a>
+                                            <a className={changeMenu('events')} onClick={e=>linkClick({'events':'Events'}, e)}><span>Events</span></a>
                                         </Link>
                                     </li>
                                     
                                     <li className="nav-item">
                                         <img src="/images/offers-icon.png" alt="events"/>
                                         <Link href="/posts/coupons">
-                                            <a className={changeMenu('coupons')} onClick={e=>setLoading('Coupons')}><span>Coupons</span></a>
+                                            <a className={changeMenu('coupons')} onClick={e=>linkClick({'coupons':'Coupons'}, e)}><span>Coupons</span></a>
                                         </Link>
                                     </li>
                                     <li className="nav-item">
                                         <img src="/images/Park-icon.png" alt="about places" className="mr-1"/>
                                         <Link href="/posts/about-places">
-                                            <a className={changeMenu('about-places')} onClick={e=>setLoading('Places to visit')}><span>About Places</span></a>
+                                            <a className={changeMenu('about-places')} onClick={e=>linkClick({'about-places':'Places to visit'}, e)}><span>About Places</span></a>
                                         </Link>
                                     </li>
                                     <li className="nav-item">
                                         <img src="/images/folder-pictures-icon.png" alt="Gallery" className="mr-1"/>
                                         <Link href="/posts/gallery">
-                                            <a className={changeMenu('gallery')} onClick={e=>setLoading('Gallery')}><span>Gallery</span></a>
+                                            <a className={changeMenu('gallery')} onClick={e=>linkClick({'gallery':'Gallery'}, e)}><span>Gallery</span></a>
                                         </Link>
                                     </li>
                                     <li className="nav-item">
                                         <img src="/images/userposts.png" alt="accommodations" className="mr-1"/>
                                         <Link href="/posts/user-posts">
-                                            <a className={changeMenu('user-posts')} onClick={e=>setLoading('User Posts')}>
+                                            <a className={changeMenu('user-posts')} onClick={e=>linkClick({'user-posts':'User Posts'}, e)}>
                                                 <span><b>User Posts</b></span>
                                             </a>
                                         </Link>

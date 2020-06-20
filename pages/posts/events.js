@@ -13,6 +13,7 @@ function Events(props) {
       <div className="container">
         <Head>
           <title>Burgh Indian - Events</title>
+          <meta name="description" content="Upcoming and current events, cultural events, kids events and any one time special deals posted by users in our telegram app"></meta>
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <Layout state={state} dispatch={dispatch}>

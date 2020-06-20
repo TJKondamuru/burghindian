@@ -7,7 +7,6 @@ function Comments(props){
     const [comment, setComment] = useState({ postid: '', text: '', by: '', trigger:false, private:false })
     const [cspinner, setCSpinner] = useState(false);
     useEffect(()=>{
-        debugger;
         clientAPI.comments(dispatch, comments).then(arycomments=>{
             setCommentList(arycomments);
         })

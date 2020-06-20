@@ -48,6 +48,12 @@ body{
     background-color: #f5f8fa;
     background-image: url('/images/page-bg.png');
 }
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    /* IE10+ CSS styles go here */
+    body{
+        background-image: url('/images/pagebg.gif');
+    }
+}
 a:hover, a{
     text-decoration: none;
     color: inherit;
@@ -531,7 +537,7 @@ ul.dropdown-menu-header li.nav-list:not(:last-child) {
 .gallery_modal{display: none;overflow:auto;}
 .body--popup--open .gallery_modal{display: flex;
                                   align-items: center;
-                                  justify-content: center;}
+                                  justify-content: space-around;}
 @media (min-width: 1300px){
     .container {
         max-width: 1710px;
@@ -650,6 +656,7 @@ ul.dropdown-menu-header li.nav-list:not(:last-child) {
 .modal-content {
     border-radius: 8px;
     border: 0;
+    text-align: center;
 }
 .modal-div{
     margin: 0px auto;
@@ -773,7 +780,7 @@ span.card-tags {
     padding-left: 29px;
 }
 ul.top-left-pagination{
-    justify-content: left !important;
+    justify-content: flex-start !important;
     margin-bottom: -10px;
 }
 ul.pagination {

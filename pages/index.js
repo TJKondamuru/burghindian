@@ -23,22 +23,33 @@ export default function Home({homepage, state, dispatch}) {
 }
 
 function HomePage({homepage}){
-  
+  const settings = {
+    className: "slider",
+    dots: true,
+    infinite: false,
+    centerMode: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows:false
+  };
   return (
     <div className="main_content" style={{overflow:"hidden"}}>
       <section className="home_banner">
         <div className="home_banner_slider">
-          <Slider  arrows={true} infinite={false} drabble={false}>
-            <div><div className="banner_img"><img src="/images/banner_image.jpg" alt="" /></div></div>
-            <div className="banner_content">
-              <h2 className="text-white h2">Burgh Indian</h2>
-              <p className="text-white mx-auto ml-md-0">One stop desi informatica of all Businesses, Social groups and Events happening here in Pittsburgh.</p>
-              <p className="text-white mx-auto ml-md-0">Join our Teams group for hundreds of items put on for sale. Post your need for free and reach wide community audience.</p>
-              <p className="text-white mx-auto ml-md-0">Advertise with us and instantly gain unmatched brand recognition.</p>
-              <a href='/posts/advertise-with-us' className="button text-white">Advertise with Us</a>
-              <a href='/posts/add-post' className="button text-white">Post Ad</a>
-            </div>
-          </Slider>
+          <div><div className="banner_img"><img src="/images/banner_image.jpg" alt="" /></div></div>
+          <div className="banner_content">
+            <Slider {...settings}>
+                <div>
+                  <h2 className="text-white h2">Burgh Indian</h2>
+                  <p className="text-white mx-auto ml-md-0">One stop desi informatica of all Businesses, Social groups and Events happening here in Pittsburgh.</p>
+                  <p className="text-white mx-auto ml-md-0">Join our Teams group for hundreds of items put on for sale. Post your need for free and reach wide community audience.</p>
+                  <p className="text-white mx-auto ml-md-0">Advertise with us and instantly gain unmatched brand recognition.</p>
+                  <a href='/posts/advertise-with-us' className="button text-white">Advertise with Us</a>
+                  <a href='/posts/add-post' className="button text-white">Post Ad</a>
+                </div>
+                
+            </Slider>
+          </div>
         </div>
       </section>
       {homepage['home-page-events'] && <HomePageEvents Events={homepage['home-page-events']} />}
