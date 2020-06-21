@@ -63,7 +63,6 @@ function CouponsPage({values, filterObj}){
 
 export const getStaticProps = async () => {
     const values = await serverAPI.coupons();
-    debugger;
     let alltags = values.map(item=>item.tags ? item.tags.split('#') : []);
     const filterObj = flatmap(alltags);
     return {props:{values, filterObj}}

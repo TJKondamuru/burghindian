@@ -6,6 +6,7 @@ import Footer from "./footer";
 
 function Layout({ children, state, dispatch }) {
     const [loading, setLoading] = useState('');
+    
     return (
         <div> 
             <Head>
