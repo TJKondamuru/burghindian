@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { EditorState, convertToRaw, convertFromRaw} from 'draft-js';
 import {clientAPI} from "../Components/clientAPI";
-import dynamic from 'next/dynamic';
 import Link from 'next/link';
-const Editor = dynamic(() => import('react-draft-wysiwyg').then(mod => mod.Editor), { ssr: false })
+import {Editor} from 'react-draft-wysiwyg'
 
 export default function Profile({secret, dispatch})
 {
@@ -195,7 +194,7 @@ function NewPost(props){
             </div>
             <div className="row">
                 <div className="col-lg-11 col-md-12">
-                    {form.posttype === 'regular' && <Editor editorState={wygState} wrapperClassName="wysiwyg" editorClassName="wysiwyg-editor editor-images shadow" onEditorStateChange={editorStateChg} />}
+                    <Editor editorState={wygState} readOnly={false} editorClassName="wysiwyg-editor editor-images shadow" onEditorStateChange={editorStateChg} />
                     {form.posttype !== 'regular' && <Accommodation prop={prop} setProp={setFormWithProp} />}
                 </div>
             </div>
