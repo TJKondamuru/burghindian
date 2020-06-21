@@ -9,7 +9,7 @@ function Gallery({values}) {
       <div className="container">
         <Head>
           <title>Burgh Indian - Photo Gallaries</title>
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="/favicon.png" />
         </Head>
         <Layout>
             <GalleryPage values={values} />

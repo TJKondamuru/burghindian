@@ -10,7 +10,7 @@ export default function AddPost({dispatch, state}){
         <div className="container">
             <Head>
             <title>Burgh Indian - Add Post</title>
-            <link rel="icon" href="/favicon.ico" />
+            <link rel="icon" href="/favicon.png" />
             </Head>
             <Layout state={state} dispatch={dispatch}>
                 <div className="main_content">

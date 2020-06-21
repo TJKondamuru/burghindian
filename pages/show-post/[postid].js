@@ -14,7 +14,7 @@ function ShowPost({postid, form, posttype, wygHTML, prop, allposts, state, dispa
       <div className="container">
         <Head>
           <title>Burgh Indian - {form.header}</title>
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="/favicon.png" />
         </Head>
         <Layout>
             <ShowPostObj form={form} posttype={posttype} wygHTML={wygHTML} prop={prop} postid={postid} allposts={allposts}

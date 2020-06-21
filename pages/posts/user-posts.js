@@ -11,7 +11,7 @@ function UserPosts({accoms, userposts, social, state, dispatch}){
         <div className="container">
           <Head>
             <title>Burgh Indian - User - Posts</title>
-            <link rel="icon" href="/favicon.ico" />
+            <link rel="icon" href="/favicon.png" />
           </Head>
           <Layout state={state} dispatch={dispatch}>
               <UserPostsObj accoms={accoms} userposts={userposts} social={social} />

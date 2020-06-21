@@ -9,7 +9,7 @@ function Coupons({state, dispatch, values, filterObj}) {
       <div className="container">
         <Head>
           <title>Burgh Indian - Coupons</title>
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="/favicon.png" />
         </Head>
         <Layout state={state} dispatch={dispatch}>
             <CouponsPage values={values} filterObj={filterObj} />

@@ -9,7 +9,7 @@ function TermsConditions({wygHTML}){
         <div className="container">
             <Head>
                 <title>Burgh Indian - Terms and Conditions</title>
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/favicon.png" />
             </Head>
             <Layout>
                 <TermsConditionsPage wygHTML={wygHTML} />

@@ -6,7 +6,7 @@ function AdvertisewithUs(props){
         <div className="container">
           <Head>
             <title>Burgh Indian - Advertise with Us</title>
-            <link rel="icon" href="/favicon.ico" />
+            <link rel="icon" href="/favicon.png" />
           </Head>
           <Layout>
             <div className="main_content">

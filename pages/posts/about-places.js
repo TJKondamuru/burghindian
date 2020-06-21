@@ -8,7 +8,7 @@ function AboutPlaces({values}) {
       <div className="container">
         <Head>
           <title>Burgh Indian - Places to Visit</title>
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="/favicon.png" />
         </Head>
         <Layout>
             <AboutPlacesPage values={values} />

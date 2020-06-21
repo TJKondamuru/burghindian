@@ -19,7 +19,7 @@ function Articles({attrs, all, wygHTML, articleId, state, dispatch}){
         <div className="container">
             <Head>
                 <title>Burgh Indian - {attrs.heading}</title>
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/favicon.png" />
             </Head>
             <Layout>
                 <ArticlesPage attrs={attrs} all={all} wygHTML={wygHTML} articleId={articleId} comments={state['comments']} dispatch={dispatch} />

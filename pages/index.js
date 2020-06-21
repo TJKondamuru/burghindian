@@ -13,7 +13,7 @@ export default function Home({homepage, state, dispatch}) {
     <div className="container">
       <Head>
         <title>Burgh Indian - Home</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <Layout state={state} dispatch={dispatch}>
           <HomePage homepage={homepage} />
