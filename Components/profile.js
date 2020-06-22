@@ -194,7 +194,7 @@ function NewPost(props){
             </div>
             <div className="row">
                 <div className="col-lg-11 col-md-12">
-                    <Editor editorState={wygState} readOnly={false} editorClassName="wysiwyg-editor editor-images shadow" onEditorStateChange={editorStateChg} />
+                    {form.posttype === 'regular' && <Editor editorState={wygState} readOnly={false} editorClassName="wysiwyg-editor editor-images shadow" onEditorStateChange={editorStateChg} />}
                     {form.posttype !== 'regular' && <Accommodation prop={prop} setProp={setFormWithProp} />}
                 </div>
             </div>
