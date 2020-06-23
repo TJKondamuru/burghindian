@@ -29,7 +29,8 @@ function ShowPostObj({postid, form, posttype, wygRaw, prop, comments, allposts, 
   const [commentCount, setCommentCount] = useState(0);
   const [wygState, setwygState] = useState(EditorState.createEmpty());
   useEffect(()=>{
-    setwygState(EditorState.createWithContent(convertFromRaw(wygRaw)));
+    if(posttype === 'regular')
+        setwygState(EditorState.createWithContent(convertFromRaw(wygRaw)));
   },[])
   useEffect(()=>{
       if(modalimage.length > 0)
@@ -93,16 +94,19 @@ function Accommodation(props){
   return(
       
       <div className="comment_content card shadow">
-          <div className="card-header">{prop.Notes}</div>
+          <div className="card-header" style={{whiteSpace:"pre-line"}}>{prop.Notes}</div>
           <div className="card-body">
               <table className="table table-striped table-hover">
                   <caption style={{captionSide:"top"}}><b>Utilities</b></caption>
                   <tbody>
                       {Object.keys(accomtree).map((x, index)=>
-                          <tr key={index}>
+                        {
+                            let selecText = accomtree[x].filter(opt=>!!prop[opt]).join(' ; ').trim();
+                            return (selecText.length > 0 && <tr key={index}>
                               <td style={{width:"250px"}}><b>{spellcheck(x)}</b></td>
-                              <td>{accomtree[x].filter(opt=>!!prop[opt]).join(' ; ')}</td>
-                          </tr>
+                              <td>{selecText}</td>
+                            </tr>)
+                        }
                       )}
                   </tbody>
               </table>
