@@ -4,12 +4,12 @@ import Layout from '../../Components/layout';
 import {serverAPI} from '../../Components/serverapi';
 import {TopHeading} from '../../Components/topHeading';
 import AllPosts from '../../Components/allPosts';
-import { convertFromRaw } from 'draft-js';
-import {stateToHTML} from 'draft-js-export-html';
+import { EditorState, convertFromRaw } from 'draft-js';
 import dynamic from 'next/dynamic';
 const Comments = dynamic(()=>import('../../Components/comments').then(mod=>mod.default), {ssr:false})
+const Editor = dynamic(()=>import('react-draft-wysiwyg').then(mod=>mod.Editor), {ssr:false})
 
-function ShowPost({postid, form, posttype, wygHTML, prop, allposts, state, dispatch}) {
+function ShowPost({postid, form, posttype, wygRaw, prop, allposts, state, dispatch}) {
     return (
       <div className="container">
         <Head>
@@ -17,16 +17,20 @@ function ShowPost({postid, form, posttype, wygHTML, prop, allposts, state, dispa
           <link rel="icon" href="/favicon.png" />
         </Head>
         <Layout>
-            <ShowPostObj form={form} posttype={posttype} wygHTML={wygHTML} prop={prop} postid={postid} allposts={allposts}
+            <ShowPostObj form={form} posttype={posttype} wygRaw={wygRaw} prop={prop} postid={postid} allposts={allposts}
              comments={state['comments']} dispatch={dispatch}/>
         </Layout>
       </div>
     )
 }
 
-function ShowPostObj({postid, form, posttype, wygHTML, prop, comments, allposts, dispatch}){
+function ShowPostObj({postid, form, posttype, wygRaw, prop, comments, allposts, dispatch}){
   const [modalimage, setModalImage] = useState('');
   const [commentCount, setCommentCount] = useState(0);
+  const [wygState, setwygState] = useState(EditorState.createEmpty());
+  useEffect(()=>{
+    setwygState(EditorState.createWithContent(convertFromRaw(wygRaw)));
+  },[])
   useEffect(()=>{
       if(modalimage.length > 0)
         document.body.classList.add('body--popup--open');
@@ -42,17 +46,8 @@ function ShowPostObj({postid, form, posttype, wygHTML, prop, comments, allposts,
                           {form.header && <>
                               <TopHeading heading={form.header} visits={form.visits} comments={commentCount} />
                               {posttype === 'regular' && 
-                              <div className="card rdw-editor-wrapper">
-                                <div className="card-body wysiwyg editor-images rdw-editor-main">
-                                    <div className="DraftEditor-root">
-                                        <div className="DraftEditor-editorContainer">
-                                            <div className="public-DraftEditor-content" style={{outline: 'none', whiteSpace:'pre-wrap', overflowWrap:'break-word'}}>
-                                                <div dangerouslySetInnerHTML={{__html:wygHTML}}></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                              </div>
+                              <Editor editorState={wygState} readOnly={true} editorClassName="wysiwyg-editor editor-images shadow" 
+                              onEditorStateChange={setwygState} toolbarHidden={true} />
                               }
                               {posttype !== 'regular' && <Accommodation prop={prop} />}
                               {Object.keys(form.files).length > 0 &&
@@ -119,7 +114,7 @@ function Accommodation(props){
 export async function getServerSideProps({ params }) {
   let ary = params.postid.split('-');
   let postid = '';
-  let wygHTML = '';
+  let wygRaw = {};
   let prop = {};
 
   if(ary[ary.length - 1] !== '0')
@@ -132,12 +127,12 @@ export async function getServerSideProps({ params }) {
   let posttype = form.posttype ? form.posttype : 'regular';
 
   if(posttype === 'regular')
-    wygHTML = stateToHTML(convertFromRaw(JSON.parse(form.post)));
+    wygRaw = JSON.parse(form.post);
   if(posttype === 'accom')
     prop = form.post;
 
   const allposts = await serverAPI.onlyPosts();
-  return {props:{postid, form, posttype, wygHTML, prop, allposts}};
+  return {props:{postid, form, posttype, wygRaw, prop, allposts}};
 }
 
 export default ShowPost;
