@@ -17,7 +17,7 @@ export default function Home({homepage, state, dispatch}) {
         <meta property="og:site_name" content="BurghIndian.com - PittsburghIndian.org" />
         <meta property="og:title" content="BurghIndian.com - Home" />
         <meta property="og:description" content="One stop desi informatica of all Businesses, Social groups and Events happening here in Pittsburgh." />
-        <meta property="og:image:secure_url" itemProp="image" content="https://pittsburghindian.org/favicon.png" />
+        <meta property="og:image" itemProp="image" content="http://pittsburghindian.org/favicon.png" />
         <meta property="og:type" content="website" />
       </Head>
       <Layout state={state} dispatch={dispatch}>
