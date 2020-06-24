@@ -6,6 +6,8 @@ function AdvertisewithUs(props){
         <div className="container">
           <Head>
             <title>Burgh Indian - Advertise with Us</title>
+            <meta name="description" content="Give your events or business massive head start. We are the fastest growing desi website in Pittsburgh and our telegram group is one of largest in Pittsburgh." />
+            <meta name="og:description" content="Give your events or business massive head start. We are the fastest growing desi website in Pittsburgh and our telegram group is one of largest in Pittsburgh." />
             <link rel="icon" href="/favicon.png" />
           </Head>
           <Layout>

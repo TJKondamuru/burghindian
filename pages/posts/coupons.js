@@ -10,6 +10,8 @@ function Coupons({state, dispatch, values, filterObj}) {
         <Head>
           <title>Burgh Indian - Coupons</title>
           <link rel="icon" href="/favicon.png" />
+          <meta property="og:description" content="Desi shops and restaurants coupons, email burghindianit@gmail.com if you have any awesome coupon to share" />
+          <meta name="description" content="Desi shops and restaurants coupons, email burghindianit@gmail.com if you have any awesome coupon to share"></meta>
         </Head>
         <Layout state={state} dispatch={dispatch}>
             <CouponsPage values={values} filterObj={filterObj} />
@@ -17,6 +19,24 @@ function Coupons({state, dispatch, values, filterObj}) {
       </div>
     )
 }
+function FootNotes(){
+    return (
+        <div className="category_list">
+            <div className="category_list_title title_border_bg"><h5 className="h5 d-inline-block">Got an coupon to share?</h5></div>
+            <div className="layer-filter m-2">
+                <p className="title_border_bg">
+                    Please <a href="/posts/add-post" target="_blank" className="venuename">post it on burghindian</a>, we will add it this page. Big THANK YOU. 
+                </p>
+                <p className="title_border_bg">
+                    Or email us at <a href="mailto:burghindianit@gmail.com" className="venuename">burghindianit@gmail.com</a> we will post it here.
+                </p>
+                <p className="title_border_bg">
+                    Or post it on our <a href="/articles/post-id-link-join-indian-community-telegram-group" target="_blank" className="venuename">Telegram group</a>, we will upload it to website.
+                </p>
+            </div>
+        </div>
+    )
+} 
 
 function CouponsPage({values, filterObj}){
     const [filter, setFilter] = useState(filterObj);
@@ -32,7 +52,7 @@ function CouponsPage({values, filterObj}){
                 <div className="container">
                     <h1 className="text-center h3">Coupons</h1>
                     <div className="row">
-                        <div className="col-lg-2"><GridFilter filter={filter} setFilter={setFilter} /></div>
+                        <div className="col-lg-2"><GridFilter filter={filter} setFilter={setFilter} footnotes={FootNotes} /></div>
                         <div className="col-lg-10">
                             <ul className="row">
                                 {values.map((item, index)=> isSelected(item.tags) &&

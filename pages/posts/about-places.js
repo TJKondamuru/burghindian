@@ -9,6 +9,8 @@ function AboutPlaces({values}) {
         <Head>
           <title>Burgh Indian - Places to Visit</title>
           <link rel="icon" href="/favicon.png" />
+          <meta name="description" content="Our compiled list of top rated Tourist Attractions in Pittsburgh, email burghindianit@gmail.com if you know an awesome place"></meta>
+          <meta property="og:description" content="Our compiled list of top rated Tourist Attractions in Pittsburgh, email burghindianit@gmail.com if you know an awesome place" />
         </Head>
         <Layout>
             <AboutPlacesPage values={values} />

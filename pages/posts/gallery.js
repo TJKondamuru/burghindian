@@ -10,6 +10,8 @@ function Gallery({values}) {
         <Head>
           <title>Burgh Indian - Photo Gallaries</title>
           <link rel="icon" href="/favicon.png" />
+          <meta name="description" content="photo gallary of pittsburgh desi events, email burghindianit@gmail.com if you have collection of photos we can use. " />
+          <meta name="og:description" content="photo gallary of pittsburgh desi events, email burghindianit@gmail.com if you have collection of photos we can use." />
         </Head>
         <Layout>
             <GalleryPage values={values} />

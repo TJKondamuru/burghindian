@@ -10,7 +10,7 @@ export const flatmap = alltags =>{
 }
 
 function GridFilter(props){
-    const {filter, setFilter} = props;
+    const {filter, setFilter, footnotes} = props;
     return(
         <>
             {
@@ -40,6 +40,7 @@ function GridFilter(props){
                     </ul>
                 </div>
             </div>
+            {footnotes && footnotes()}
         </>
     );
 }

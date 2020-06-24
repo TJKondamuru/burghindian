@@ -14,6 +14,7 @@ function Events(props) {
         <Head>
           <title>Burgh Indian - Events</title>
           <meta name="description" content="Upcoming and current events, cultural events, kids events and any one time special deals posted by users in our telegram app"></meta>
+          <meta property="og:description" content="Upcoming and current events, cultural events, kids events and any one time special deals posted by users in our telegram app." />
           <link rel="icon" href="/favicon.png" />
         </Head>
         <Layout state={state} dispatch={dispatch}>
@@ -52,7 +53,7 @@ function EventsPage({events, filterObj}){
                 <div className="container">
                     <h1 className="text-center h3">Events</h1>
                     <div className="row">
-                        <div className="col-lg-2"><GridFilter filter={filter} setFilter={setFilter} /></div>
+                        <div className="col-lg-2"><GridFilter filter={filter} setFilter={setFilter} footnotes={FootNotes}  /></div>
                         <div className="col-lg-10">
                             <div className="row">
                                 <div className="col-lg-12 clear float-right">
@@ -83,7 +84,24 @@ function EventsPage({events, filterObj}){
 
 }
 
- 
+function FootNotes(){
+    return (
+        <div className="category_list">
+            <div className="category_list_title title_border_bg"><h5 className="h5 d-inline-block">Got an event to share?</h5></div>
+            <div className="layer-filter m-2">
+                <p className="title_border_bg">
+                    Please <a href="/posts/add-post" target="_blank" className="venuename">post it on burghindian</a>, we will add it this page. Big THANK YOU. 
+                </p>
+                <p className="title_border_bg">
+                    Or email us at <a href="mailto:burghindianit@gmail.com" className="venuename">burghindianit@gmail.com</a> we will post it here.
+                </p>
+                <p className="title_border_bg">
+                    Or post it on our <a href="/articles/post-id-link-join-indian-community-telegram-group" target="_blank" className="venuename">Telegram group</a>, we will upload it to website.
+                </p>
+            </div>
+        </div>
+    )
+} 
 export const getStaticProps = async () => {
     
     const allevents = await serverAPI.events();
