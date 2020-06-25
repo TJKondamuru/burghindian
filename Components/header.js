@@ -11,11 +11,9 @@ function Header({loading, setLoading}) {
         if(window){
             if(!window.ReactGA){
                 window.ReactGA = true;
-                //console.log('initialize');
                 ReactGA.initialize('UA-170206445-2')
             }
             ReactGA.pageview(router.asPath);
-            //console.log(router.asPath);
         }
     },[])
 
