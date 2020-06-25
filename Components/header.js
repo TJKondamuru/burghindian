@@ -1,12 +1,23 @@
 import React, {useState, useEffect} from "react";
-import Link from 'next/link'
-import { useRouter } from 'next/router'
+import Link from 'next/link';
+import ReactGA from 'react-ga';
+import { useRouter } from 'next/router';
 
 function Header({loading, setLoading}) {
     const router = useRouter();
     const [addClass, setaddClass] = useState(false);
     const [menuname, setMenuname] = useState(router.route.toLowerCase().substr(router.route.toLowerCase().lastIndexOf('/')))
-    
+    useEffect(()=>{
+        if(window){
+            if(!window.ReactGA){
+                window.ReactGA = true;
+                //console.log('initialize');
+                ReactGA.initialize('UA-170206445-2')
+            }
+            ReactGA.pageview(router.asPath);
+            //console.log(router.asPath);
+        }
+    },[])
 
     useEffect(()=>{
         if (addClass) {
