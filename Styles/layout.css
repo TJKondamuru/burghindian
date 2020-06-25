@@ -1116,7 +1116,7 @@ h5.post_title {
     height: 180px;
 }
 .same_img img {
-    width: 100%;
+    width: 95%;
     background-repeat:no-repeat;
     background-attachment:fixed;
     background-size:cover;
