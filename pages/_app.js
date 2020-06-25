@@ -1,5 +1,4 @@
-import  {Container } from 'next/app'
-import React, {useReducer} from "react";
+import React, {useReducer, useEffect} from "react";
 import '../Styles/layout.css';
 import '../Styles/layout-responsive.css';
 import '../Styles/header.css';
@@ -19,6 +18,10 @@ function App({ Component, pageProps }) {
     //const [state, dispatch] = useReducer(Reducer, {visitedArticles:{}, visitedPosts: {}, places:[], coupons:[], posts:[], 
     //    comments:[], accoms:[], allevents:[], gallery:[], home:{}, secret:''});
     //debugger;
+    useEffect(()=>{
+      if(window)
+        console.log('in-app')
+    },[]);
     const [state, dispatch] = useReducer(Reducer, {comments:[], secret:'', 'time':(new Date()).toString()});
     return <Component {...pageProps} state={state} dispatch={dispatch} />
 }
