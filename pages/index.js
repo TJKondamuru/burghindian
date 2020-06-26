@@ -103,7 +103,7 @@ function HomePage({homepage}){
               <img src="/images/offer_img1.png" className="img-fluid m-auto img-center" alt=""/>
             </a>
           </Link>
-          <Link href="/posts/local-biz-services">
+          <Link href="/posts/business-listing">
             <a className="col-xl-3 col-sm-6 offer_box second position-relative">
               <div className="offer_text text-white">
                 <h3>Local Biz & Services</h3>
