@@ -86,7 +86,7 @@ function HomePage({homepage}){
                   Check posts from our Telegram group (or) Ads posted on this
                   website.
                 </p>
-                <Link href="/User-Posts"><a className="button white_btn bg-white">Check User Posts</a></Link>
+                <Link href="/posts/user-posts"><a className="button white_btn bg-white">Check User Posts</a></Link>
               </div>
             </div>
           </div>
