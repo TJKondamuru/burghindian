@@ -5,3 +5,6 @@ app-updates-06-16
 
 app-updates-06-30
     Added multiple events and accomidation requests
+
+app-updates-07-02
+    Added multiple events and accomidation requests
