@@ -11,3 +11,5 @@ app-updates-07-02
 
 app-updates-07-13
     Added multiple events and accomidation requests
+app-updates-07-15
+    Added multiple accomidation requests
