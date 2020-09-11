@@ -1336,3 +1336,30 @@ table.table-bordered > thead > tr > th{
 table.table-bordered > tbody > tr > td{
     border:1px solid #428bca;
 }
+
+.slick-dots li button:before{
+    color:#06a406 !important;
+}
+.slick-dots li.slick-active button:before{
+    width: 20px !important;
+    height: 20px !important;
+    color:#dd6c33 !important;
+}
+.slick-my-next, .slick-my-prev{
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    top: 50%;
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: 0;
+    background: 0 0;
+    right: 0px;
+    position: absolute;
+    opacity: .7;
+}
+.slick-my-prev{
+    right: inherit;
+    z-index: 100;
+}
