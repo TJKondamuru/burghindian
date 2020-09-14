@@ -22,37 +22,67 @@ export default function Home({homepage, state, dispatch}) {
     </div>
   )
 }
-
+function SampleNextArrow(props) {
+  const {style, onClick } = props;
+  return (
+    <img
+      src="/images/button-round-arrow-right-icon.png"
+      className="slick-my-next"
+      style={{ ...style, display: "block"}}
+      onClick={onClick}
+    />
+  );
+}
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <img
+      src="/images/button-round-arrow-left-icon.png"
+      className="slick-my-prev"
+      style={{ ...style, display: "block"}}
+      onClick={onClick}
+    />
+  );
+}
 function HomePage({homepage}){
   const settings = {
     className: "slider",
     dots: true,
-    infinite: false,
+    infinite: true,
     centerMode: false,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows:false
+    arrows:true,
+    speed:500,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />
   };
   return (
     <div className="main_content" style={{overflow:"hidden"}}>
       <section className="home_banner">
-        <div className="home_banner_slider">
-          <div><div className="banner_img"><img src="/images/banner_image.jpg" alt="" /></div></div>
-          <div className="banner_content">
-            <Slider {...settings}>
-                <div>
-                  <h2 className="text-white h2">Burgh Indian</h2>
-                  <p className="text-white mx-auto ml-md-0">One stop desi informatica of all Businesses, Social groups and Events happening here in Pittsburgh.</p>
-                  <p className="text-white mx-auto ml-md-0">Join our Teams group for hundreds of items put on for sale. Post your need for free and reach wide community audience.</p>
-                  <p className="text-white mx-auto ml-md-0">Advertise with us and instantly gain unmatched brand recognition.</p>
-                  <a href='/posts/advertise-with-us' className="button text-white">Advertise with Us</a>
-                  <a href='/posts/add-post' className="button text-white">Post Ad</a>
+        <Slider {...settings}>
+        {
+          homepage['home-page-carousel'].sort((a,b)=>Number.parseFloat(a.key) - Number.parseFloat(b.key)).map(slide=>
+            {
+              const {key, entry} = slide;
+              return <div className="home_banner_slider" key={key}>  
+                <div><div className="banner_img"><img src={entry.slideimg} alt={entry.heading} /></div></div>  
+                <div className="banner_content">
+                  <div>
+                    <h2 className="text-white h2">{entry.heading}</h2>
+                    {entry.lines.map((line,index)=><p key={index} className="text-white mx-auto ml-md-0">{line}</p>)}
+                    {entry.buttons.map((button,index)=><a key={index} href={button.link} className="button text-white">{button.name}</a>)}
+                  </div>
                 </div>
-                
-            </Slider>
-          </div>
-        </div>
+              </div>
+            }
+          )
+        } 
+        </Slider>
       </section>
+      
       {homepage['home-page-events'] && <HomePageEvents Events={homepage['home-page-events']} />}
       {homepage['home-page-coupouns'] && <Coupons Coupouns={homepage['home-page-coupouns']} Articles={homepage['home-page-articles']} />}
       <section className="whatsapp_group_section position-relative">          
