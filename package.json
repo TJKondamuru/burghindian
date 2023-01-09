@@ -13,7 +13,7 @@
     "cross-env": "^7.0.2",
     "draft-js": "^0.11.5",
     "draft-js-export-html": "^1.4.1",
-    "luxon": "^1.23.0",
+    "luxon": "^1.28.1",
     "next": "9.4.4",
     "next-page-transitions": "^1.0.0-beta.2",
     "react": "16.13.1",
